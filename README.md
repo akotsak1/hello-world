@@ -4,7 +4,7 @@ Just another repository
 
 ***This is the beginning of a Zuora Library of qeuries!
 
-*****This is ALL IN CHURN-- The first query above the UNION statement calculates downgrades, the query below that calculates cancellations.
+*****This is ALL IN CHURN-- The first query above the UNION statement calculates downgrades, the query below that calculates cancellations. This is what powers the ALL IN CHURN number in quicksight.
 
 select a.inc_inception_id__c, max(s.version),
   (CASE when sum(CASE when rp.amendmenttype='NewProduct' THEN rc.MRR END)-sum(CASE when rp.amendmenttype='RemoveProduct' THEN rc.MRR END) IS NULL THEN sum(CASE when rp.amendmenttype='RemoveProduct' THEN rc.MRR END)*-1
